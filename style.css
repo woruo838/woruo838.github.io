@@ -968,6 +968,14 @@ body {
         -webkit-overflow-scrolling: touch;
     }
     
+    .ascii-art pre {
+        white-space: pre;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: max-content;
+        min-width: 100%;
+    }
+    
     .command-line {
         font-size: 1rem;
         overflow-x: auto;
@@ -1012,6 +1020,14 @@ body {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 10px;
+    }
+    
+    .ascii-art pre {
+        white-space: pre;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: max-content;
+        min-width: 100%;
     }
     
     .command-line {
