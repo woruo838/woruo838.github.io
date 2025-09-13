@@ -218,7 +218,7 @@ body {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 
         0 0 30px rgba(0, 255, 255, 0.3),
         0 0 60px rgba(255, 0, 128, 0.2),
@@ -337,6 +337,19 @@ body {
     line-height: 1.2;
     text-shadow: 0 0 5px #00ffff;
     animation: asciiGlow 2s ease-in-out infinite alternate;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ascii-art pre {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: max-content;
+    min-width: 100%;
 }
 
 @keyframes asciiGlow {
@@ -939,6 +952,35 @@ body {
     
     .terminal {
         margin: 0 10px;
+        max-width: calc(100vw - 20px);
+    }
+    
+    .terminal-body {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .ascii-art {
+        font-size: 0.6rem;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .ascii-art pre {
+        white-space: pre;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: max-content;
+        min-width: 100%;
+    }
+    
+    .command-line {
+        font-size: 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -960,12 +1002,43 @@ body {
         gap: 20px;
     }
     
+    .terminal {
+        margin: 0 5px;
+        max-width: calc(100vw - 10px);
+    }
+    
     .terminal-body {
-        padding: 15px;
+        padding: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .ascii-art {
+        font-size: 0.45rem;
+        line-height: 1;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+    }
+    
+    .ascii-art pre {
+        white-space: pre;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: max-content;
+        min-width: 100%;
+    }
+    
+    .command-line {
+        font-size: 0.9rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
     
     .intro-text p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 }
 
