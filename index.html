@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Portfolio | 黑客风格个人主页</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <div class="container">
+        <!-- 头部导航 -->
+        <nav class="nav">
+            <div class="logo">
+                <span class="bracket">[</span>
+                <span class="name">HACKER</span>
+                <span class="bracket">]</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">./about</a>
+                <a href="#skills" class="nav-link">./skills</a>
+                <a href="#projects" class="nav-link">./projects</a>
+                <a href="#contact" class="nav-link">./contact</a>
+            </div>
+        </nav>
+
+        <!-- 主要内容区域 -->
+        <main class="main">
+            <!-- 英雄区域 -->
+            <section class="hero">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn close"></span>
+                            <span class="btn minimize"></span>
+                            <span class="btn maximize"></span>
+                        </div>
+                        <div class="terminal-title">root@localhost:~$</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="command-line">
+                            <span class="prompt">root@localhost:~$</span>
+                            <span class="command" id="typewriter"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        <div class="output">
+                            <div class="ascii-art">
+                                <pre id="ascii-output"></pre>
+                            </div>
+                            <div class="intro-text">
+                                <p class="fade-in">Welcome to my digital realm...</p>
+                                <p class="fade-in delay-1">I am a <span class="highlight">Full Stack Developer</span></p>
+                                <p class="fade-in delay-2">Passionate about <span class="highlight">Cybersecurity</span> & <span class="highlight">AI</span></p>
+                                <p class="fade-in delay-3">Building the future, one line of code at a time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 关于我 -->
+            <section id="about" class="section">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    About Me
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="about-content">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-label">Technologies Mastered</span>
+                        </div>
+                    </div>
+                    <div class="bio">
+                        <p>I'm a passionate developer who thrives in the digital underground. My expertise spans across multiple domains, from web development to cybersecurity research.</p>
+                        <p>When I'm not coding, you'll find me exploring the latest security vulnerabilities, contributing to open-source projects, or diving deep into AI and machine learning algorithms.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 技能 -->
+            <section id="skills" class="section">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    Skills & Technologies
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">HTML5</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Go</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Security</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Penetration Testing</span>
+                            <span class="skill-tag">OWASP</span>
+                            <span class="skill-tag">Cryptography</span>
+                            <span class="skill-tag">Network Security</span>
+                            <span class="skill-tag">Reverse Engineering</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Others</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Bash</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目 -->
+            <section id="projects" class="section">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    Featured Projects
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>SecureChat</h3>
+                            <span class="project-status">Active</span>
+                        </div>
+                        <p>End-to-end encrypted messaging application with advanced security features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">WebRTC</span>
+                            <span class="tech-tag">Cryptography</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>VulnScanner</h3>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        <p>Automated vulnerability scanner for web applications with custom payload generation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">SQLMap</span>
+                            <span class="tech-tag">Nmap</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>AI Threat Detection</h3>
+                            <span class="project-status">In Progress</span>
+                        </div>
+                        <p>Machine learning model for real-time network intrusion detection and analysis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Wireshark</span>
+                            <span class="tech-tag">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系方式 -->
+            <section id="contact" class="section">
+                <h2 class="section-title">
+                    <span class="bracket">[</span>
+                    Contact & Social
+                    <span class="bracket">]</span>
+                </h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-label">Email:</span>
+                        <a href="mailto:hacker@example.com" class="contact-link">hacker@example.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">GitHub:</span>
+                        <a href="https://github.com/hacker" class="contact-link">github.com/hacker</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">LinkedIn:</span>
+                        <a href="https://linkedin.com/in/hacker" class="contact-link">linkedin.com/in/hacker</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Twitter:</span>
+                        <a href="https://twitter.com/hacker" class="contact-link">@hacker</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>&copy; 2024 Hacker Portfolio. All rights reserved.</p>
+            <p>"In code we trust, in security we excel."</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
