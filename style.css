@@ -939,6 +939,27 @@ body {
     
     .terminal {
         margin: 0 10px;
+        max-width: calc(100vw - 20px);
+    }
+    
+    .terminal-body {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .ascii-art {
+        font-size: 0.6rem;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .command-line {
+        font-size: 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -960,12 +981,35 @@ body {
         gap: 20px;
     }
     
+    .terminal {
+        margin: 0 5px;
+        max-width: calc(100vw - 10px);
+    }
+    
     .terminal-body {
-        padding: 15px;
+        padding: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .ascii-art {
+        font-size: 0.45rem;
+        line-height: 1;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+    }
+    
+    .command-line {
+        font-size: 0.9rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
     
     .intro-text p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 }
 

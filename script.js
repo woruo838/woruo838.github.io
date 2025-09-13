@@ -13,12 +13,27 @@ document.addEventListener('DOMContentLoaded', function() {
         'neo@matrix:~$ sudo rm -rf /system/control'
     ];
     
+    // 移动端简化命令
+    const mobileCommands = [
+        'neo@matrix:~$ whoami',
+        'neo@matrix:~$ cat /dev/neural',
+        'neo@matrix:~$ ls -la /cyber/',
+        'neo@matrix:~$ python3 hack.py',
+        'neo@matrix:~$ nmap corporate.net',
+        'neo@matrix:~$ ./matrix.sh',
+        'neo@matrix:~$ decrypt reality.enc',
+        'neo@matrix:~$ sudo rm -rf /system'
+    ];
+    
     let commandIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     
     function typeEffect() {
-        const currentCommand = commands[commandIndex];
+        // 根据屏幕宽度选择命令集
+        const isMobile = window.innerWidth <= 768;
+        const selectedCommands = isMobile ? mobileCommands : commands;
+        const currentCommand = selectedCommands[commandIndex];
         
         if (isDeleting) {
             typewriter.textContent = currentCommand.substring(0, charIndex - 1);
@@ -35,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
-            commandIndex = (commandIndex + 1) % commands.length;
+            commandIndex = (commandIndex + 1) % selectedCommands.length;
             typeSpeed = 500;
         }
         
@@ -58,16 +73,60 @@ document.addEventListener('DOMContentLoaded', function() {
         '    ╚═══════════════════════════════════════════════════════╝'
     ];
     
+    // 移动端简化版ASCII艺术
+    const mobileAsciiArt = [
+        '╔═══════════════════════════════╗',
+        '║    ██████╗██╗   ██╗██████╗    ║',
+        '║   ██╔════╝╚██╗ ██╔╝██╔══██╗   ║',
+        '║   ██║      ╚████╔╝ ██████╔╝   ║',
+        '║   ██║       ╚██╔╝  ██╔══██╗   ║',
+        '║   ╚██████╗   ██║   ██████╔╝   ║',
+        '║    ╚═════╝   ╚═╝   ╚═════╝    ║',
+        '║     [ NEURAL INTERFACE ]      ║',
+        '╚═══════════════════════════════╝'
+    ];
+    
     const asciiOutput = document.getElementById('ascii-output');
     let lineIndex = 0;
     
     function displayAsciiArt() {
-        if (lineIndex < asciiArt.length) {
-            asciiOutput.textContent += asciiArt[lineIndex] + '\n';
+        // 根据屏幕宽度选择ASCII艺术版本
+        const isMobile = window.innerWidth <= 768;
+        const selectedArt = isMobile ? mobileAsciiArt : asciiArt;
+        
+        if (lineIndex < selectedArt.length) {
+            asciiOutput.textContent += selectedArt[lineIndex] + '\n';
             lineIndex++;
             setTimeout(displayAsciiArt, 200);
         }
     }
+    
+    // 监听窗口大小变化，重新渲染ASCII艺术
+    function handleResize() {
+        const isMobile = window.innerWidth <= 768;
+        const selectedArt = isMobile ? mobileAsciiArt : asciiArt;
+        
+        // 重新渲染ASCII艺术
+        asciiOutput.textContent = '';
+        lineIndex = 0;
+        
+        function redisplayArt() {
+            if (lineIndex < selectedArt.length) {
+                asciiOutput.textContent += selectedArt[lineIndex] + '\n';
+                lineIndex++;
+                setTimeout(redisplayArt, 50); // 更快的重新渲染
+            }
+        }
+        
+        redisplayArt();
+    }
+    
+    // 添加窗口大小变化监听器
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 300);
+    });
     
     // 延迟显示ASCII艺术
     setTimeout(displayAsciiArt, 2000);
